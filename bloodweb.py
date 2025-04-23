@@ -47,7 +47,7 @@ def next_bloodweb():
     global XX, YY
     center_node = "Items/center-node.png"
     try:
-        print("Changing Bloodweb...")
+        print("Changing Bloodweb...\n")
         location = pyautogui.locateOnScreen(center_node, confidence=0.8, grayscale=True)
         if location:
             center_x, center_y = pyautogui.center(location)
@@ -57,7 +57,7 @@ def next_bloodweb():
             time.sleep(random.uniform(0.8, 1.2))
             pyautogui.mouseUp()
             pyautogui.moveTo(0, 0)
-            time.sleep(random.uniform(4.5, 5.5))
+            time.sleep(random.uniform(5.5, 6.5))
         else:
             print("Center node not found...")
             prestige()
@@ -108,13 +108,12 @@ def mouse_click_event():
                     time.sleep(random.uniform(0.8, 1.2))
                     pyautogui.mouseUp()
                     pyautogui.moveTo(0, 0)
-                    time.sleep(random.uniform(1.5, 2.5))
+                    time.sleep(random.uniform(2.5, 3))
                 else:
                     print("Item not found...")
             except pyautogui.ImageNotFoundException:
-                print("Item not found...")
-                time.sleep(0.5)
-            index += 1
+                time.sleep(0.2)
+                index += 1
         next_bloodweb()
         index = 0
 
